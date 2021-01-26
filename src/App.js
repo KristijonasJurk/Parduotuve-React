@@ -1,9 +1,10 @@
 import { render } from '@testing-library/react';
 import React from 'react';
+import Products from './components/Products';
 import data from "./data.json";
 
-class App extend React.Component {
-  constructor(){
+class App extends React.Component {
+  constructor() {
     super();
     this.state = {
       products: data.products,
@@ -11,8 +12,7 @@ class App extend React.Component {
       sort: ""
     }
   }
-
-  render(){
+  render() {
     return (
       <div className="grid-container">
         <header>
@@ -21,7 +21,7 @@ class App extend React.Component {
         <main>
           <div className="content">
             <div className="main">
-              products
+              <Products products={this.state.products}></Products>
             </div>
             <div className="sidebar">
               cart items

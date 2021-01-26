@@ -58,3 +58,58 @@ footer{
 .sidebar{
   flex: 1 20rem;
 }
+
+/* products */
+
+.products{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+.products li{
+  flex: 0 1 29rem;
+  height: 47rem;
+  padding: 1rem;
+}
+.product{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.product img{
+  max-width: 37rem;
+  max-height: 37rem;
+}
+.product-price{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.product-price div,
+.product-price button{
+  text-align: center;
+  flex: 1;
+}
+.product-price div{
+  font-size: 2rem;
+}
+.product-price button{
+  padding: 1rem;
+  border: solid .1rem black;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+}
+.button:hover{
+  border: 0.1rem solid red;
+}
+.button.primary{
+  background-color: black;
+}
