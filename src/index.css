@@ -6,7 +6,7 @@ body, #root{
   height: 100vh;
   margin: 0;
 }
-body, input, select, textarea{
+body, input, select, textarea, button{
   font-size: 1.6rem;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -19,6 +19,9 @@ body, input, select, textarea{
   grid-template-rows: 5rem 1fr 5rem;
   grid-template-columns: 1fr;
   height: 100%;
+}
+a{
+  text-decoration: none;
 }
 header{
   grid-area: header;
@@ -71,8 +74,8 @@ footer{
   list-style-type: none;
 }
 .products li{
-  flex: 0 1 29rem;
-  height: 47rem;
+  flex: 0;
+  height: 52rem;
   padding: 1rem;
 }
 .product{
@@ -85,11 +88,23 @@ footer{
   max-width: 37rem;
   max-height: 37rem;
 }
+.product p{
+  text-align: center;
+  word-break: keep-all;
+  color: black;
+}
 .product-price{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.price-tag{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: baseline;
+  margin: 1rem;
 }
 .product-price div,
 .product-price button{
@@ -99,16 +114,19 @@ footer{
 .product-price div{
   font-size: 2rem;
 }
+.product-price .smaller{
+  font-size: 1.2rem;
+  margin: 0 0.4rem 0 0;
+}
 .product-price button{
-  padding: 1rem;
-  border: solid .1rem black;
+  padding: 1.3rem;
   background-color: black;
   color: white;
   cursor: pointer;
   width: 100%;
 }
 .button:hover{
-  border: 0.1rem solid red;
+  opacity: 0.7;
 }
 .button.primary{
   background-color: black;
