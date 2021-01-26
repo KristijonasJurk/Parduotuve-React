@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 function formatCurrency(num) {
-    return Number(num.toFixed(0)).toLocaleString() + ".";
+    return "  " + Number(num.toFixed(0)).toLocaleString() + ".";
 }
 function formatCurrencySmall(num) {
     return Number(num.toFixed(2)).toLocaleString().slice(3, 5);
