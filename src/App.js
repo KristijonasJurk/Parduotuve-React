@@ -2,10 +2,16 @@ import React from 'react';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-
+    <div className="grid-container">
+      <header>
+        <a href="/">Parduotuvė</a>
       </header>
+      <main>
+        product list
+      </main>
+      <footer>
+        all rights reserved
+      </footer>
     </div>
   );
 }
