@@ -19,7 +19,6 @@ body, input, select, textarea{
   grid-template-rows: 5rem 1fr 5rem;
   grid-template-columns: 1fr;
   height: 100%;
-  padding: .5rem;
 }
 header{
   grid-area: header;
@@ -27,6 +26,7 @@ header{
   background-color: black;
   display: flex;
   align-items: center;
+  padding: .5rem;
 }
 header a {
   color: white;
@@ -45,4 +45,16 @@ footer{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+
+.content{
+  display: flex;
+  flex-wrap: wrap;
+}
+.main{
+  flex: 3 60rem;
+}
+.sidebar{
+  flex: 1 20rem;
 }
