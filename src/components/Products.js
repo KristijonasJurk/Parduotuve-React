@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import Fade from 'react-reveal/Fade';
+import Modal from 'react-modal';
+import Zoom from 'react-reveal/Zoom';
+
 
 function formatCurrency(num) {
     return "  " + Number(num.toFixed(0)).toLocaleString() + ".";
@@ -10,7 +13,20 @@ function formatCurrencySmall(num) {
 
 
 export default class Products extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            product: null,
+        };
+    }
+    openModal = (product) => {
+        this.setState({ product });
+    }
+    closeModal = () => {
+        this.setState({ product: null });
+    }
     render() {
+        const { product } = this.state;
         return (
             <div>
                 <Fade bottom cascade={true}>
@@ -18,7 +34,8 @@ export default class Products extends Component {
                         {this.props.products.map(product => (
                             <li key={product._id}>
                                 <div className="product">
-                                    <a href={"#" + product._id}>
+                                    <a href={"#" + product._id}
+                                        onclick={() => this.openModal(product)}>
                                         <img src={product.image} alt={product.title} />
                                         <p>
                                             {product.title}
@@ -46,6 +63,16 @@ export default class Products extends Component {
                         ))}
                     </ul>
                 </Fade>
+                {
+                    product $$ (
+                <Modal isOpen={true}
+                    onRequestClose={this.closeModal}>
+                    <Zoom>
+                        <button className='close-modal' onclick={this.closeModal}>x</button>
+                        <div>Modal</div>
+                    </Zoom>
+                </Modal>
+                )}
             </div>
         )
     }

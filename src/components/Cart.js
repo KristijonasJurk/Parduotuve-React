@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import Fade from 'react-reveal/Fade';
+
 
 function formatCurrency(num) {
     return "$ " + Number(num.toFixed(2)).toLocaleString();
@@ -18,28 +20,30 @@ export default class Cart extends Component {
                     )}
                 <div className="cart-main">
                     <div className='cart'>
-                        <ul className='cart-items'>
-                            {cartItems.map(item => (
-                                <li key={item._id}>
-                                    <div className='cart-element'>
-                                        <div className="cart-element-title">{item.title}
-                                            <div>Quantity: {item.count}</div>
-                                        </div>
-                                        <div className="right">
-                                            {formatCurrency(item.price)}
-                                            <div className='buttons'>
-                                                <button className="button" onClick={() => this.props.removeCompletelyFromCart(item)}>
-                                                    -
+                        <Fade right cascade >
+                            <ul className='cart-items'>
+                                {cartItems.map(item => (
+                                    <li key={item._id}>
+                                        <div className='cart-element'>
+                                            <div className="cart-element-title">{item.title}
+                                                <div>Quantity: {item.count}</div>
+                                            </div>
+                                            <div className="right">
+                                                {formatCurrency(item.price)}
+                                                <div className='buttons'>
+                                                    <button className="button" onClick={() => this.props.removeCompletelyFromCart(item)}>
+                                                        -
                                             </button>
-                                                <button className="button" onClick={() => this.props.addToCart(item)}>
-                                                    +
+                                                    <button className="button" onClick={() => this.props.addToCart(item)}>
+                                                        +
                                             </button>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </li>
-                            ))}
-                        </ul>
+                                    </li>
+                                ))}
+                            </ul>
+                        </Fade>
                     </div>
                     {
                         cartItems.length !== 0 && (
