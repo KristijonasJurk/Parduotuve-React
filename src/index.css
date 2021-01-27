@@ -131,3 +131,16 @@ footer{
 .button.primary{
   background-color: black;
 }
+
+/* Filter */
+
+.filter{
+  display: flex;
+  padding: 1rem;
+  margin: 1rem;
+  border-bottom: solid 0.1rem black;
+  justify-content: space-between;
+}
+.filter div{
+  /* flex: 1; */
+}
