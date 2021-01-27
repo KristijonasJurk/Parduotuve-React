@@ -55,12 +55,17 @@ footer{
   display: flex;
   flex-wrap: wrap;
   overflow: hidden;
+  position: relative;
 }
 .main{
   flex: 3 60rem;
 }
 .sidebar{
-  flex: 1 20rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20vw;
+  height: 100vh;
   background-color: rgb(134, 128, 128);
   transform: translateX(0rem);
 }
@@ -251,18 +256,37 @@ footer{
 }
 .product-details-description {
   flex: 1 1;
-  margin: 1rem;
+  margin: 2rem;
 }
 .close-modal {
   position: absolute;
   right: 1rem;
-  top: 2.5rem;
+  top: 1.5rem;
+  font-size: 1.1rem;
+  width: 2.2rem;
+  height: 2.2rem;
   z-index: 1000;
+  background-color: black;
+  color: white;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 .button-modal{
   background-color: black;
   color: white;
   width: 12rem;
+  height: 4rem;
+  border: none;
+  font-size: 1.2rem;
+  margin: 2rem 0 0 0;
+  cursor: pointer;
+}
+.button-modal-back{
+  float: right;
+  width: 8rem;
   height: 4rem;
   border: none;
   font-size: 1.2rem;

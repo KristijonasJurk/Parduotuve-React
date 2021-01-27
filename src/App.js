@@ -1,9 +1,13 @@
-// import { render } from '@testing-library/react';
 import React, { useState } from 'react';
 import Products from './components/Products';
 import data from "./data.json";
 import Filter from "./components/Filter";
 import Cart from './components/Cart';
+
+
+
+
+
 
 class App extends React.Component {
   constructor() {

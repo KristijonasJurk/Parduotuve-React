@@ -68,7 +68,7 @@ export default class Products extends Component {
                         onRequestClose={this.closeModal}>
                         <Zoom>
                             <button className="close-modal" onClick={this.closeModal}>
-                                x
+                                X
                             </button>
                             <div className="product-details">
                                 <img src={product.image} alt={product.title}></img>
@@ -90,6 +90,14 @@ export default class Products extends Component {
                                     </div>
                                     <h3>Product description</h3>
                                     <p>{product.description}</p>
+                                    <button
+                                        className="button-modal button-modal-back"
+                                        onClick={() => {
+                                            this.closeModal();
+                                        }}
+                                    >
+                                        BACK
+                                         </button>
                                 </div>
                             </div>
                         </Zoom>
