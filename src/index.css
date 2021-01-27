@@ -236,3 +236,39 @@ footer{
   font-size: 1.2rem;
   margin: 1rem;
 }
+
+/*modal */
+.product-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-height: 96vh;
+}
+.product-details img {
+  max-height: 50vh;
+  max-width: 46rem;
+  margin: 0 auto;
+}
+.product-details-description {
+  flex: 1 1;
+  margin: 1rem;
+}
+.close-modal {
+  position: absolute;
+  right: 1rem;
+  top: 2.5rem;
+  z-index: 1000;
+}
+.button-modal{
+  background-color: black;
+  color: white;
+  width: 12rem;
+  height: 4rem;
+  border: none;
+  font-size: 1.2rem;
+  margin: 2rem 0 0 0;
+}
+.product-details-description p:last-of-type{
+  border-top: 1px solid gray;
+  padding: 2rem 0;
+}

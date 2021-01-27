@@ -21,10 +21,10 @@ export default class Products extends Component {
     }
     openModal = (product) => {
         this.setState({ product });
-    }
+    };
     closeModal = () => {
         this.setState({ product: null });
-    }
+    };
     render() {
         const { product } = this.state;
         return (
@@ -35,7 +35,7 @@ export default class Products extends Component {
                             <li key={product._id}>
                                 <div className="product">
                                     <a href={"#" + product._id}
-                                        onclick={() => this.openModal(product)}>
+                                        onClick={() => this.openModal(product)}>
                                         <img src={product.image} alt={product.title} />
                                         <p>
                                             {product.title}
@@ -63,15 +63,37 @@ export default class Products extends Component {
                         ))}
                     </ul>
                 </Fade>
-                {
-                    product $$ (
-                <Modal isOpen={true}
-                    onRequestClose={this.closeModal}>
-                    <Zoom>
-                        <button className='close-modal' onclick={this.closeModal}>x</button>
-                        <div>Modal</div>
-                    </Zoom>
-                </Modal>
+                {product && (
+                    <Modal isOpen={true}
+                        onRequestClose={this.closeModal}>
+                        <Zoom>
+                            <button className="close-modal" onClick={this.closeModal}>
+                                x
+                            </button>
+                            <div className="product-details">
+                                <img src={product.image} alt={product.title}></img>
+                                <div className="product-details-description">
+                                    <p>
+                                        <strong>{product.title}</strong>
+                                    </p>
+                                    <div className="modal-price">
+                                        <div>$ {product.price}</div>
+                                        <button
+                                            className="button-modal"
+                                            onClick={() => {
+                                                this.props.addToCart(product);
+                                                this.closeModal();
+                                            }}
+                                        >
+                                            ADD TO CART
+                                         </button>
+                                    </div>
+                                    <h3>Product description</h3>
+                                    <p>{product.description}</p>
+                                </div>
+                            </div>
+                        </Zoom>
+                    </Modal>
                 )}
             </div>
         )
