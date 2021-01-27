@@ -1,13 +1,22 @@
 import React, { useState } from 'react';
 import Products from './components/Products';
 import data from "./data.json";
+import data1 from "./data1.json";
 import Filter from "./components/Filter";
 import Cart from './components/Cart';
 
 
-
-
-
+// const getRecipes = async () => {
+//   const response = await fetch(
+//     `https://api.edamam.com/api/food-database/v2/parser?nutrition-type=logging&ingr=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
+//   );
+//   const data = await response.json();
+//   setRecipes(data.hints);
+//   // another way to write everything
+//   // fetch(`https://api.edamam.com/search?q=chicken&app_id=${APP_ID}&app_key=${APP_KEY}`)
+//   // .then (repsonse => {
+//   // response.json...
+// };
 
 class App extends React.Component {
   constructor() {
@@ -19,20 +28,7 @@ class App extends React.Component {
       sort: ""
     }
   }
-  // removeFromCart = (product) => {
-  //   const cartItems = this.state.cartItems.slice();
-  //   cartItems.forEach(item => {
-  //     if (item._id == product._id) {
-  //       item.count--;
-  //     }
-  //     if (item.count <= 0) {
-  //       this.setState({
-  //         cartItems: cartItems.filter(x => x._id !== product._id)
-  //       });
-  //     }
-  //   })
-  //   this.setState({ cartItems });
-  // }
+
   removeCompletelyFromCart = (product) => {
     const cartItems = this.state.cartItems.slice();
     this.setState({

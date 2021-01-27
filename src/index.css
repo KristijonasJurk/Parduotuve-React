@@ -65,6 +65,7 @@ footer{
   top: 0;
   right: 0;
   width: 20vw;
+  min-width: 25rem;
   height: 100vh;
   background-color: rgb(134, 128, 128);
   transform: translateX(0rem);
