@@ -1,22 +1,8 @@
 import React, { useState } from 'react';
 import Products from './components/Products';
 import data from "./data.json";
-import data1 from "./data1.json";
 import Filter from "./components/Filter";
 import Cart from './components/Cart';
-
-
-// const getRecipes = async () => {
-//   const response = await fetch(
-//     `https://api.edamam.com/api/food-database/v2/parser?nutrition-type=logging&ingr=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
-//   );
-//   const data = await response.json();
-//   setRecipes(data.hints);
-//   // another way to write everything
-//   // fetch(`https://api.edamam.com/search?q=chicken&app_id=${APP_ID}&app_key=${APP_KEY}`)
-//   // .then (repsonse => {
-//   // response.json...
-// };
 
 class App extends React.Component {
   constructor() {
@@ -25,7 +11,8 @@ class App extends React.Component {
       products: data.products,
       cartItems: localStorage.getItem("cartItems") ? JSON.parse(localStorage.getItem("cartItems")) : [],
       size: "",
-      sort: ""
+      sort: "",
+      sidebarActive: false,
     }
   }
 
@@ -89,9 +76,12 @@ class App extends React.Component {
                 sortProducts={this.sortProducts}
               ></Filter>
               <Products products={this.state.products}
-                addToCart={this.addToCart}></Products>
+                addToCart={this.addToCart}
+              ></Products>
+              {/* TODO pataisyti valiutas, sugalvoti kaip perduoti state kad kai paspaudi add to cart suveiktu sidebarActive */}
             </div>
-            <div className="sidebar">
+            <div className={this.state.sidebarActive ? "sidebar sidebar-active" : "sidebar sidebar-deactive"}>
+              <button className="sidebar-close" onClick={() => this.setState({ sidebarActive: !this.state.sidebarActive })}>x</button>
               <Cart cartItems={this.state.cartItems}
                 removeCompletelyFromCart={this.removeCompletelyFromCart}
                 addToCart={this.addToCart} />
@@ -99,8 +89,9 @@ class App extends React.Component {
           </div>
         </main>
         <footer>
-          all rights reserved
-      </footer>
+          <div>Autorius: KristijonasJurk@gmail.com</div>
+          <div>Github: https://github.com/KristijonasJurk</div>
+        </footer>
       </div>
     );
   }

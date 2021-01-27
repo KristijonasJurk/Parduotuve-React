@@ -53,7 +53,10 @@ export default class Products extends Component {
                                                 {formatCurrencySmall(product.price)}
                                             </div>
                                         </div>
-                                        <button onClick={() => this.props.addToCart(product)}
+                                        <button onClick={() => {
+                                            this.props.addToCart(product)
+                                            this.sidebarActive(true);
+                                        }}
                                             className="button primary">
                                             Add to Cart
                                     </button>
@@ -63,47 +66,49 @@ export default class Products extends Component {
                         ))}
                     </ul>
                 </Fade>
-                {product && (
-                    <Modal isOpen={true}
-                        onRequestClose={this.closeModal}>
-                        <Zoom>
-                            <button className="close-modal" onClick={this.closeModal}>
-                                X
+                {
+                    product && (
+                        <Modal isOpen={true}
+                            onRequestClose={this.closeModal}>
+                            <Zoom>
+                                <button className="close-modal" onClick={this.closeModal}>
+                                    X
                             </button>
-                            <div className="product-details">
-                                <img src={product.image} alt={product.title}></img>
-                                <div className="product-details-description">
-                                    <p>
-                                        <strong>{product.title}</strong>
-                                    </p>
-                                    <div className="modal-price">
-                                        <div>$ {product.price}</div>
+                                <div className="product-details">
+                                    <img src={product.image} alt={product.title}></img>
+                                    <div className="product-details-description">
+                                        <p>
+                                            <strong>{product.title}</strong>
+                                        </p>
+                                        <div className="modal-price">
+                                            <div>$ {product.price}</div>
+                                            <button
+                                                className="button-modal"
+                                                onClick={() => {
+                                                    this.props.addToCart(product);
+                                                    this.closeModal();
+                                                }}
+                                            >
+                                                ADD TO CART
+                                         </button>
+                                        </div>
+                                        <h3>Product description</h3>
+                                        <p>{product.description}</p>
                                         <button
-                                            className="button-modal"
+                                            className="button-modal button-modal-back"
                                             onClick={() => {
-                                                this.props.addToCart(product);
                                                 this.closeModal();
                                             }}
                                         >
-                                            ADD TO CART
+                                            BACK
                                          </button>
                                     </div>
-                                    <h3>Product description</h3>
-                                    <p>{product.description}</p>
-                                    <button
-                                        className="button-modal button-modal-back"
-                                        onClick={() => {
-                                            this.closeModal();
-                                        }}
-                                    >
-                                        BACK
-                                         </button>
                                 </div>
-                            </div>
-                        </Zoom>
-                    </Modal>
-                )}
-            </div>
+                            </Zoom>
+                        </Modal>
+                    )
+                }
+            </div >
         )
     }
 }
