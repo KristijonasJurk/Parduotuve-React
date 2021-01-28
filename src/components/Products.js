@@ -61,7 +61,7 @@ export default class Products extends Component {
                                         </div>
                                         <button onClick={() => {
                                             this.props.addToCart(product)
-                                            this.sidebarActive(true);
+                                            // this.sidebarActive(true);
                                         }}
                                             className="button primary">
                                             Add to Cart

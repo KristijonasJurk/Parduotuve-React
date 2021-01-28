@@ -52,7 +52,7 @@ export default class Cart extends Component {
                                     <div className="cart-subtotal">
                                         <div>
                                             SUBTOTAL:
-                                    </div>
+                                        </div>
                                         <div>
                                             {formatCurrency(
                                                 cartItems.reduce((a, c) => a + c.price * c.count, 0)

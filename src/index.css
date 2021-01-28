@@ -36,7 +36,8 @@ header a {
   text-decoration: none;
 }
 a:hover {
-  color: red;
+  color: lightcoral;
+  transition: .3s;
 }
 main{
   grid-area: main;
@@ -69,7 +70,7 @@ footer{
   right: 0px;
   width: 28rem;
   height: 100vh;
-  background-color: rgb(134, 128, 128);
+  background-color: #1B1B21;
   transform: translateX(23rem);
   transition: 0.3s;
 }
@@ -179,8 +180,9 @@ footer{
   border-bottom: solid 0.1rem black;
   justify-content: space-between;
 }
-.filter div{
-  /* flex: 1; */
+.filter select{
+  width: 12rem;
+  height: 2.2rem;
 }
 
 /* cart */
@@ -193,12 +195,13 @@ footer{
 }
 .cart-header{
   border-bottom: .1rem gray solid;
+  color: white;
 }
 .cart-items{
   padding: 0;
   width: 100%;
   list-style-type: none;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid gray;
 }
 .cart-items li{
   display: flex;
@@ -218,13 +221,19 @@ footer{
 .cart-element{
   display: grid;
   grid-template-columns: 1fr 8rem;
+  color: white;
 }
 .cart-element-title{
   grid-column: 1/2;
+  color: white;
+}
+.cart-element-title div{
+  color:gray;
 }
 .right{
   grid-column: 2/3;
   text-align: right;
+  color: orange;
 }
 .buttons{
   display: flex;
@@ -237,6 +246,9 @@ footer{
   align-items: center;
   width: 2rem;
   height: 2rem;
+  color: white;
+  background-color: black;
+  border: none;
 }
 .total{
   display: flex;
@@ -262,6 +274,7 @@ footer{
 }
 .cart-subtotal div{
   padding: 1rem;
+  color: white;
 }
 .button-checkout {
   background-color: black;
@@ -271,6 +284,7 @@ footer{
   height: 4rem;
   font-size: 1.2rem;
   margin: 1rem;
+  cursor: pointer;
 }
 
 /*modal */

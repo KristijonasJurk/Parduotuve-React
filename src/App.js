@@ -77,10 +77,11 @@ class App extends React.Component {
               <Products products={this.state.products}
                 addToCart={this.addToCart}
               ></Products>
-              {/* TODO pataisyti valiutas, sugalvoti kaip perduoti state kad kai paspaudi add to cart suveiktu sidebarActive */}
             </div>
             <div className={this.state.sidebarActive ? "sidebar sidebar-active" : "sidebar sidebar-deactive"}>
-              <button className="sidebar-close" onClick={() => this.setState({ sidebarActive: !this.state.sidebarActive })}>x</button>
+              <button className="sidebar-close" onClick={() => this.setState({ sidebarActive: !this.state.sidebarActive })}>
+                {this.state.sidebarActive ? <i class="fas fa-times"></i> : <i class="fas fa-shopping-cart"></i>}
+              </button>
               <Cart cartItems={this.state.cartItems}
                 removeCompletelyFromCart={this.removeCompletelyFromCart}
                 addToCart={this.addToCart} />
