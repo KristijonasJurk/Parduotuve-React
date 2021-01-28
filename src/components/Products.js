@@ -5,10 +5,16 @@ import Zoom from 'react-reveal/Zoom';
 
 
 function formatCurrency(num) {
-    return "  " + Number(num.toFixed(0)).toLocaleString() + ".";
+    let number = num.toFixed(2).slice(0, -3);
+    return "  " + Number(number).toLocaleString() + ".";
 }
+
 function formatCurrencySmall(num) {
-    return Number(num.toFixed(2)).toLocaleString().slice(3, 5);
+    let number = num.toFixed(2).slice(-2);
+    if (number.charAt(number.length - 2) == 0) {
+        return Number(number).toLocaleString().slice(-2) + '0';
+    }
+    return Number(number).toLocaleString().slice(-2);
 }
 
 
